@@ -1,0 +1,20 @@
+# ------- ELASTICSEARCH -------
+GET /_status
+GET /_nodes
+GET /_mapping
+
+PUT /endpoint
+EX PUT /movies/movie/{{id}}
+
+
+#----------------------- CONTAINERIZATION -----------------------
+
+docker build -t urbantide_project .
+docker run -p 8081:8081 urbantide_project
+
+
+docker build -t [USERNAME]/urbantide_project .
+docker login
+docker push kappa17/urbantide_project
+
+docker run [USERNAME]/urbantide_project
